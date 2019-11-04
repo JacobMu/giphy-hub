@@ -62,9 +62,7 @@ module.exports = {
     // maxWorkers: "50%",
 
     // An array of directory names to be searched recursively up from the requiring module's location
-    // moduleDirectories: [
-    //   "node_modules"
-    // ],
+    moduleDirectories: ['node_modules'],
 
     // An array of file extensions your modules use
     moduleFileExtensions: ['js', 'jsx'],
@@ -157,11 +155,11 @@ module.exports = {
     // testURL: "http://localhost",
 
     // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
-    // timers: "real",
+    timers: 'fake',
 
     // A map from regular expressions to paths to transformers
     transform: {
-        '^.+\\.jsx?$': '<rootDir>/jest.transform.js',
+        '^.+\\.(js|jsx)$': 'babel-jest',
     },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
