@@ -1,11 +1,15 @@
+import { getCommentElement } from './startGiphyHubService';
+
 export function startGiphyHub() {
     const commentElement = getCommentElement();
+
     if (!commentElement) {
-        return;
+        throw new Error('Could not find comment area to add button');
     }
-    console.log('fuck me');
+
+    return injectGiphyButton();
 }
 
-function getCommentElement() {
-    return document.querySelector('#new_comment_field');
+function injectGiphyButton() {
+    return true;
 }

@@ -4,3 +4,6 @@ package-lock.json
 
 # Project files
 .idea/
+.DS_Store
+src/.DS_Store
+coverage/
