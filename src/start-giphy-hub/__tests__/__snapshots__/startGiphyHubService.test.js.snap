@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`startGiphyHubService renderGiphyButton returns looks good to me html button template 1`] = `
+"
+        <div id=\\"button-wrapper\\" class=\\"giphy-button-wrapper\\">
+            <div id=\\"looks-good-to-me\\">LGTM</div>
+        </div>
+    "
+`;
