@@ -73,6 +73,7 @@ module.exports = {
         '^react-addons-test-utils$': '<rootDir>/node_modules/preact-test-utils/lib/index.js',
         '^react$': '<rootDir>/node_modules/preact-compat/lib/index.js',
         '^react-dom$': '<rootDir>/node_modules/preact-compat/lib/index.js',
+        '\\.(css|less|scss)$': 'identity-obj-proxy',
     },
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

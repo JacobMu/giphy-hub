@@ -1,6 +1,7 @@
 const path = require('path');
 
 const config = {
+    watch: true,
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -12,10 +13,6 @@ const config = {
                 test: /\.js$/,
                 use: 'babel-loader',
                 exclude: /node_modules/,
-            },
-            {
-                test: /\.svg$/,
-                use: 'file-loader',
             },
             {
                 test: /\.scss$/,

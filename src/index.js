@@ -1,4 +1,4 @@
-import { startGiphyHub } from './startGiphyHub';
+import { startGiphyHub } from './start-giphy-hub/startGiphyHub.js';
 
 (function() {
     startGiphyHub();
