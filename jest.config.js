@@ -73,6 +73,7 @@ module.exports = {
         '^react-addons-test-utils$': '<rootDir>/node_modules/preact-test-utils/lib/index.js',
         '^react$': '<rootDir>/node_modules/preact-compat/lib/index.js',
         '^react-dom$': '<rootDir>/node_modules/preact-compat/lib/index.js',
+        '\\.(css|less|scss)$': 'identity-obj-proxy',
     },
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -151,7 +152,7 @@ module.exports = {
     // This option allows use of a custom test runner
     // testRunner: "jasmine2",
 
-    // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
+    // This option sets the url for the jsdom environment. It is reflected in properties such as location.href
     // testURL: "http://localhost",
 
     // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
