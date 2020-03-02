@@ -1,9 +1,9 @@
-import { appendGiphyToApproveCheckbox } from '../injectGiphyHubButton';
+import { appendGiphyToTextArea } from '../giphy-approve-message/giphyApproveMessage';
 
 describe('injectGiphyHubButton', () => {
-    describe('#appendGiphyToApproveCheckbox()', () => {
+    describe('#appendGiphyToTextArea()', () => {
         it('injects button to DOM', () => {
-            const button = appendGiphyToApproveCheckbox();
+            const button = appendGiphyToTextArea();
 
             console.log(button);
         });

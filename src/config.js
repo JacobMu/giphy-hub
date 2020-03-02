@@ -10,4 +10,14 @@ export const DOM_ELEMENTS = {
     },
 };
 
-export const API_KEY = 'yIxrvjbbKaU0cGOuXuRi6dHKu0M6XqHO';
+export const GIPHY = {
+    url: 'https://api.giphy.com/v1/gifs/search',
+    apiKey: 'yIxrvjbbKaU0cGOuXuRi6dHKu0M6XqHO',
+    queryParams: {
+        searchQuery: 'great-job',
+        language: 'en',
+    },
+};
+
+const BREAKING_SPACE = '\n';
+export const APPROVAL_COMMENT = `lgtm!${BREAKING_SPACE}![LGTM!](https://media.giphy.com/media`;

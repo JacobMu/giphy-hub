@@ -1,10 +1,9 @@
 import { hasCommentElement } from './startGiphyHubService';
-import { appendGiphyToApproveCheckbox } from './injectGiphyHubButton';
+import { appendGiphyToTextArea } from './giphy-approve-message/giphyApproveMessage';
 
-export function startGiphyHub() {
+export function startGiphyHubExtensions() {
     if (!hasCommentElement()) {
-        throw new Error('Could not find comment area to add button');
+        return;
     }
-
-    appendGiphyToApproveCheckbox();
+    appendGiphyToTextArea();
 }

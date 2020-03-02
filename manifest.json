@@ -1,13 +1,18 @@
 {
+    "manifest_version": 2,
     "name": "Getting Started Example",
     "version": "1.0",
     "description": "Giphy extension for Github",
-    "manifest_version": 2,
+    "background": {
+        "scripts": ["src/background.js"],
+        "persistent": false
+    },
     "content_scripts": [
         {
-            "matches": ["https://github.com/JacobMu/giphy-hub/pull/*", "https://github.com/JacobMu/giphy-hub/pull/*/files", "https://github.beeone.at/George/georgefrontend/pull/*/files"],
+            "matches": ["<all_urls>"],
             "js": ["dist/bundle.js"]
         }
     ],
-    "permissions": ["https://*/*", "http://*/*", "activeTab"]
+    "permissions": ["https://*/*", "http://*/*", "activeTab", "tabs"],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

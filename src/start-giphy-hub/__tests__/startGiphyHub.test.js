@@ -1,16 +1,16 @@
-import { startGiphyHub } from '../startGiphyHub';
+import { startGiphyHubExtensions } from '../startGiphyHub';
 import * as startGiphyHubService from '../startGiphyHubService';
-import * as injectGiphyButton from '../injectGiphyHubButton';
+import * as injectGiphyButton from '../giphy-approve-message/giphyApproveMessage';
 
 describe('startGiphyHub', () => {
-    describe('#startGiphyHub()', () => {
+    describe('#startGiphyHubExtensions()', () => {
         it('injects button into code if textarea element was found', () => {
             const getCommentElementSpy = jest
                 .spyOn(startGiphyHubService, 'hasCommentElement')
                 .mockReturnValue(true);
             const injectGiphyButtonSpy = jest.spyOn(injectGiphyButton, 'injectButton');
 
-            startGiphyHub();
+            startGiphyHubExtensions();
 
             expect(getCommentElementSpy).toHaveBeenCalledWith();
             expect(injectGiphyButtonSpy).toHaveBeenCalledWith();
@@ -21,7 +21,7 @@ describe('startGiphyHub', () => {
                 .spyOn(startGiphyHubService, 'hasCommentElement')
                 .mockReturnValue(false);
 
-            expect(startGiphyHub).toThrow('Could not find comment area to add button');
+            expect(startGiphyHubExtensions).toThrow('Could not find comment area to add button');
             expect(getCommentElementSpy).toHaveBeenCalledWith();
         });
     });
