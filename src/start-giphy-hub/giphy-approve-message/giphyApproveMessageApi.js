@@ -7,7 +7,7 @@ export function fetchGifIdFromGiphy() {
 
     return fetch(url)
         .then(response => response.json())
-        .then(payload => payload.data[getRandomNumber()].id)
+        .then(payload => payload.data[getRandomNumber(payload.data.length)].id)
         .then(id => getReviewCommentFormField().val(getApprovalMessage(id)))
         .catch(error => new Error(error));
 }
@@ -28,8 +28,8 @@ function getSearchParams() {
     };
 }
 
-function getRandomNumber() {
-    return Math.round(Math.random() * 10) - 1;
+function getRandomNumber(maxNumber) {
+    return Math.floor(Math.random() * maxNumber) - 1;
 }
 
 function getApprovalMessage(id) {
