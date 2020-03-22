@@ -8,3 +8,19 @@ export function getReviewCommentFormField() {
 export function getApproveCheckbox() {
     return DOM_ELEMENTS.FORM_CHECKBOX.APPROVE;
 }
+
+export function registerChangeHandler(selector, handler) {
+    $(selector).on('change', handler);
+}
+
+export function toggleVisibility(selector, isVisible) {
+    $(selector).toggle(isVisible);
+}
+
+export function setAttribute(selector, attribute, value) {
+    $(selector).attr(attribute, value);
+}
+
+export function insertHtmlAfter(htmlString, afterSelector) {
+    $(htmlString).insertAfter($(afterSelector));
+}

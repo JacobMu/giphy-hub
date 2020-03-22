@@ -1,5 +1,4 @@
-import { APPROVAL_COMMENT, GIPHY } from '../../config';
-import { getReviewCommentFormField } from './giphyApproveMessageService';
+import { GIPHY } from '../../config';
 
 export function fetchGifIdFromGiphy() {
     const url = getGiphyUrl();
@@ -7,9 +6,7 @@ export function fetchGifIdFromGiphy() {
 
     return fetch(url)
         .then(response => response.json())
-        .then(payload => payload.data[getRandomNumber(payload.data.length)].id)
-        .then(id => getReviewCommentFormField().val(getApprovalMessage(id)))
-        .catch(error => new Error(error));
+        .then(payload => payload.data[getRandomNumber(payload.data.length)].id);
 }
 
 function getGiphyUrl() {
@@ -30,8 +27,4 @@ function getSearchParams() {
 
 function getRandomNumber(maxNumber) {
     return Math.floor(Math.random() * maxNumber) - 1;
-}
-
-function getApprovalMessage(id) {
-    return `${APPROVAL_COMMENT}/${id}/giphy.gif)`;
 }
