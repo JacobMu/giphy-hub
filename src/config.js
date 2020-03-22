@@ -13,6 +13,7 @@ export const DOM_ELEMENTS = {
     GIPHY_PREVIEW: {
         CONTAINER: '#giphy-hub-preview',
         IMG: '#giphy-hub-preview > img',
+        REFRESH: '#giphy-hub-preview > button[type=button]',
     },
 };
 

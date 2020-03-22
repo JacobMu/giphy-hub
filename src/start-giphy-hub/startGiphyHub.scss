@@ -12,7 +12,8 @@
 }
 
 #giphy-hub-preview {
-  display: none;
+  display: flex;
+  align-items: center;
 
   > img {
     width: 300px;

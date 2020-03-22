@@ -4,7 +4,7 @@ import {
     registerChangeHandler,
     toggleVisibility,
     setAttribute,
-    insertHtmlAfter,
+    insertHtmlAfter, registerClickHandler,
 } from './giphyApproveMessageService';
 import { fetchGifIdFromGiphy } from './giphyApproveMessageApi';
 import { DOM_ELEMENTS, getApprovalComment, getGifUrl } from '../../config';
@@ -42,9 +42,10 @@ function injectPreviewArea() {
     const { CONTAINER } = DOM_ELEMENTS.GIPHY_PREVIEW;
     const containerId = CONTAINER.replace('#', '');
     insertHtmlAfter(
-        `<div id="${containerId}"><img /></div>`,
+        `<div id="${containerId}"><img /><button type="button">Refresh</button></div>`,
         DOM_ELEMENTS.PR_REVIEW_COMMENT_FIELD.WRITE_CONTENT,
     );
+    hidePreview();
 }
 
 function insertRandomGif() {
@@ -58,4 +59,5 @@ function handleInsertingApproveMessage() {
     injectPreviewArea();
     registerChangeHandler(DOM_ELEMENTS.FORM_CHECKBOX.ALL, clearGiphyChanges);
     registerChangeHandler(DOM_ELEMENTS.FORM_CHECKBOX.APPROVE, insertRandomGif);
+    registerClickHandler(DOM_ELEMENTS.GIPHY_PREVIEW.REFRESH, insertRandomGif);
 }

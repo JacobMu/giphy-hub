@@ -13,6 +13,10 @@ export function registerChangeHandler(selector, handler) {
     $(selector).on('change', handler);
 }
 
+export function registerClickHandler(selector, handler) {
+    $(selector).on('click', handler);
+}
+
 export function toggleVisibility(selector, isVisible) {
     $(selector).toggle(isVisible);
 }
