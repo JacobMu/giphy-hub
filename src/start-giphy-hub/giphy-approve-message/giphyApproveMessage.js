@@ -4,7 +4,8 @@ import {
     registerChangeHandler,
     toggleVisibility,
     setAttribute,
-    insertHtmlAfter, registerClickHandler,
+    insertHtmlAfter,
+    registerClickHandler,
 } from './giphyApproveMessageService';
 import { fetchGifIdFromGiphy } from './giphyApproveMessageApi';
 import { DOM_ELEMENTS, getApprovalComment, getGifUrl } from '../../config';
@@ -42,7 +43,7 @@ function injectPreviewArea() {
     const { CONTAINER } = DOM_ELEMENTS.GIPHY_PREVIEW;
     const containerId = CONTAINER.replace('#', '');
     insertHtmlAfter(
-        `<div id="${containerId}"><img /><button type="button">Refresh</button></div>`,
+        `<div id="${containerId}"><img /><button type="button" class="btn btn-sm btn-secondary">Refresh</button></div>`,
         DOM_ELEMENTS.PR_REVIEW_COMMENT_FIELD.WRITE_CONTENT,
     );
     hidePreview();
