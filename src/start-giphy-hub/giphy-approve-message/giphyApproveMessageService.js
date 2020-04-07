@@ -28,3 +28,7 @@ export function setAttribute(selector, attribute, value) {
 export function insertHtmlAfter(htmlString, afterSelector) {
     $(htmlString).insertAfter($(afterSelector));
 }
+
+export function doesElementExist(selector) {
+    return $(selector).length > 0;
+}
