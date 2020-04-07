@@ -13,12 +13,11 @@ chrome.runtime.onMessage.addListener(function(request) {
     }
 });
 
-document.addEventListener('click', function() {
-    clearInputField();
-});
+document.addEventListener('click', clearInputField);
 
 function clearInputField() {
-    if (!$(getApproveCheckbox())[0].checked) {
+    const approveCheckbox = getApproveCheckbox();
+    if (approveCheckbox.length && approveCheckbox[0].checked) {
         $(getReviewCommentFormField()).val('');
     }
 }

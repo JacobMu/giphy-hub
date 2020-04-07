@@ -10,3 +10,13 @@
     cursor: pointer;
   }
 }
+
+#giphy-hub-preview {
+  display: flex;
+  align-items: center;
+
+  > img {
+    width: 300px;
+    margin: 15px;
+  }
+}

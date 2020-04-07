@@ -1,5 +1,6 @@
 export const DOM_ELEMENTS = {
     FORM_CHECKBOX: {
+        ALL: '[type=radio]',
         APPROVE: '[value="approve"]',
     },
     PR_REVIEW_COMMENT_FIELD: {
@@ -7,6 +8,12 @@ export const DOM_ELEMENTS = {
         BODY: '#pull_request_review_body',
         CONTAINER: '.js-reviews-container',
         TOGGLE: '.js-reviews-toggle',
+        WRITE_CONTENT: '.write-content',
+    },
+    GIPHY_PREVIEW: {
+        CONTAINER: '#giphy-hub-preview',
+        IMG: '#giphy-hub-preview > img',
+        REFRESH: '#giphy-hub-preview > button[type=button]',
     },
 };
 
@@ -20,4 +27,9 @@ export const GIPHY = {
 };
 
 const BREAKING_SPACE = '\n';
-export const APPROVAL_COMMENT = `lgtm!${BREAKING_SPACE}![LGTM!](https://media.giphy.com/media`;
+export function getGifUrl(gifId) {
+    return `https://media.giphy.com/media/${gifId}/giphy.gif`;
+}
+export function getApprovalComment(gifId) {
+    return `lgtm!${BREAKING_SPACE}![LGTM!](${getGifUrl(gifId)})`;
+}
