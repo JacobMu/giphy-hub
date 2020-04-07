@@ -5,7 +5,8 @@ import {
     toggleVisibility,
     setAttribute,
     insertHtmlAfter,
-    registerClickHandler, doesElementExist,
+    registerClickHandler,
+    doesElementExist,
 } from './giphyApproveMessageService';
 import { fetchGifIdFromGiphy } from './giphyApproveMessageApi';
 import { DOM_ELEMENTS, getApprovalComment, getGifUrl } from '../../config';
@@ -17,8 +18,9 @@ export function appendGiphyToTextArea() {
     handleInsertingApproveMessage();
 }
 
-function injectGifComment(gifId) {
-    getReviewCommentFormField().val(getApprovalComment(gifId));
+async function injectGifComment(gifId) {
+    const comment = await getApprovalComment(gifId);
+    getReviewCommentFormField().val(comment);
 }
 
 function injectGifPreview(gifId) {

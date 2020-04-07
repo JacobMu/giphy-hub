@@ -2,10 +2,13 @@ const path = require('path');
 
 const config = {
     watch: true,
-    entry: './src/index.js',
+    entry: {
+        bundle: ['./src/index.js', 'babel-polyfill'],
+        options: './src/options/index.js',
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].js',
     },
     module: {
         rules: [

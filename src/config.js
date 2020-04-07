@@ -1,3 +1,5 @@
+import { getOptions } from './options/options';
+
 export const DOM_ELEMENTS = {
     FORM_CHECKBOX: {
         ALL: '[type=radio]',
@@ -30,6 +32,7 @@ const BREAKING_SPACE = '\n';
 export function getGifUrl(gifId) {
     return `https://media.giphy.com/media/${gifId}/giphy.gif`;
 }
-export function getApprovalComment(gifId) {
-    return `lgtm!${BREAKING_SPACE}![LGTM!](${getGifUrl(gifId)})`;
+export async function getApprovalComment(gifId) {
+    const { approveMessage } = await getOptions();
+    return `${approveMessage}!${BREAKING_SPACE}![${approveMessage}!](${getGifUrl(gifId)})`;
 }
