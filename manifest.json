@@ -13,6 +13,10 @@
             "js": ["dist/bundle.js"]
         }
     ],
-    "permissions": ["https://*/*", "http://*/*", "activeTab", "tabs"],
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+    "permissions": ["https://*/*", "http://*/*", "activeTab", "tabs", "storage"],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    }
 }
