@@ -15,7 +15,8 @@ export const DOM_ELEMENTS = {
     GIPHY_PREVIEW: {
         CONTAINER: '#giphy-hub-preview',
         IMG: '#giphy-hub-preview > img',
-        REFRESH: '#giphy-hub-preview > button[type=button]',
+        REFRESH: '#previewRefresh',
+        CLEAR: '#previewClear',
     },
 };
 
@@ -33,6 +34,11 @@ export function getGifUrl(gifId) {
     return `https://media.giphy.com/media/${gifId}/giphy.gif`;
 }
 export async function getApprovalComment(gifId) {
+    const approveMessage = await getApproveMessage();
+    return `${approveMessage}${BREAKING_SPACE}[${approveMessage}!](${getGifUrl(gifId)})`;
+}
+
+export async function getApproveMessage() {
     const { approveMessage } = await getOptions();
-    return `${approveMessage}!${BREAKING_SPACE}![${approveMessage}!](${getGifUrl(gifId)})`;
+    return approveMessage;
 }
