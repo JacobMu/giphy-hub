@@ -1,4 +1,3 @@
-import $ from 'cash-dom';
 import {
     getReviewCommentFormField,
     registerChangeHandler,
@@ -21,8 +20,7 @@ export function appendGiphyToTextArea() {
 }
 
 async function injectGifComment(gifId) {
-    const comment = await getApprovalComment(gifId);
-    getReviewCommentFormField().val(comment);
+    getReviewCommentFormField().value = await getApprovalComment(gifId);
 }
 
 export async function injectApproveMessageWithoutGif() {
@@ -31,7 +29,7 @@ export async function injectApproveMessageWithoutGif() {
 }
 
 function clearGiphyChanges() {
-    $(getReviewCommentFormField()).val('');
+    getReviewCommentFormField().value = '';
     hidePreview();
 }
 
