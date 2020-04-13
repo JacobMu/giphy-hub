@@ -1,17 +1,7 @@
-import $ from 'cash-dom';
-import {
-    getReviewCommentFormField,
-    registerChangeHandler,
-    registerClickHandler,
-} from './giphyApproveMessageService';
+import { getReviewCommentFormField, registerChangeHandler } from './giphyApproveMessageService';
 import { fetchGifIdFromGiphy } from './giphyApproveMessageApi';
 import { DOM_ELEMENTS, getApprovalComment, getApproveMessage } from '../../config';
-import {
-    hidePreview,
-    injectGifPreview,
-    injectPreviewArea,
-    registerPreviewHandlers,
-} from '../preview/previewService';
+import { hidePreview, injectGifPreview, injectPreviewArea } from '../preview/previewService';
 
 export function appendGiphyToTextArea() {
     if (!getReviewCommentFormField()) {
@@ -21,17 +11,15 @@ export function appendGiphyToTextArea() {
 }
 
 async function injectGifComment(gifId) {
-    const comment = await getApprovalComment(gifId);
-    getReviewCommentFormField().val(comment);
+    getReviewCommentFormField().value = await getApprovalComment(gifId);
 }
 
 export async function injectApproveMessageWithoutGif() {
-    const message = await getApproveMessage();
-    getReviewCommentFormField().val(message);
+    getReviewCommentFormField().value = await getApproveMessage();
 }
 
 function clearGiphyChanges() {
-    $(getReviewCommentFormField()).val('');
+    getReviewCommentFormField().value = '';
     hidePreview();
 }
 
