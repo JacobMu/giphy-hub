@@ -1,12 +1,10 @@
-import $ from 'cash-dom';
 import { DOM_ELEMENTS } from '../../config';
 
 const SHOW_ELEMENT = 'block';
 const HIDE_ELEMENT = 'none';
 
 export function getReviewCommentFormField() {
-    const element = $(DOM_ELEMENTS.PR_REVIEW_COMMENT_FIELD.BODY);
-    return element.length > 0 ? element : undefined;
+    return document.querySelector(DOM_ELEMENTS.PR_REVIEW_COMMENT_FIELD.BODY);
 }
 
 export function getApproveCheckbox() {
