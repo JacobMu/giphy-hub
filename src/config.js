@@ -35,7 +35,7 @@ export function getGifUrl(gifId) {
 }
 export async function getApprovalComment(gifId) {
     const approveMessage = await getApproveMessage();
-    return `${approveMessage}${BREAKING_SPACE}[${approveMessage}!](${getGifUrl(gifId)})`;
+    return `${approveMessage}${BREAKING_SPACE}![${approveMessage}](${getGifUrl(gifId)})`;
 }
 
 export async function getApproveMessage() {
