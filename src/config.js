@@ -31,7 +31,7 @@ export const GIPHY = {
 
 const BREAKING_SPACE = '\n';
 export function getGifUrl(gifId) {
-    return `https://media.giphy.com/media/${gifId}/giphy.gif`;
+    return `https://media.giphy.com/media/${gifId}/200.gif`;
 }
 export async function getApprovalComment(gifId) {
     const approveMessage = await getApproveMessage();
